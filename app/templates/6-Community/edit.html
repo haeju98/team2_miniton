@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '6-Community/edit.css' %}" type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="middle">
+            <input class="titleinput" type="text" name="title" value="{{post.title}}" placeholder="커뮤니티명을 입력해주세요">
+        </div>
+        <div class="textbox">
+            <textarea class="contentinput" name="content" cols="30" rows="10" placeholder="설명을 입력해주세요">{{post.content}}</textarea>    
+        </div>
+        <div class="bottom">
+            <button class="button" type="submit">수정하기</button>
+        </div>
+    </form>
+{% endblock content %}

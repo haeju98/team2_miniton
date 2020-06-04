@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '6-Community/Community_detail.css' %}" type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <div class="head-bar">
+        <div class="title">Community</div>
+    </div>
+
+    <div class="mid-bar">
+        <h1>Title</h1>
+    </div>
+
+    <div class="main-box">
+        <h2>contents</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquamerat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
+        </p>
+    </div>
+
+    <div class="comments">
+        {% for comment in post.comments.all %}
+            <div class="comment">
+                <span class="material-icons">reply</span>
+                <div class="comment_cont">{{comment.content}}</div>
+                {% if user.is_authenticated and comment.author.pk == user.pk %}
+                    <a class="del_cont" href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+                {% endif %}
+            </div>
+        {% endfor%}
+    </div>
+
+    {% if user.is_authenticated %}
+    <form class="new_comment" method="POST">
+        {% csrf_token %}
+        <input class="new_content" type="text" name="content" placeholder="댓글을 입력해주세요">
+        <button class="button" type="submit">댓글쓰기</button>
+    </form>
+    {% endif %}
+
+    <a class="button" href="{% url 'Community' %}">홈으로</a>
+    {% if user.is_authenticated and post.author.pk == user.pk %}
+    <a class="button" href="{% url 'edit' post.pk %}">수정하기</a>
+    <a class="button" href="{% url 'delete' post.pk %}">삭제하기</a>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '6-Community/Community.css' %}" type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <div class="header">
+        <div class="title">Community</div>
+    </div>
+
+    <div class="mainbox">
+        {% for post in posts %}
+            <div class="main-oneline">
+                <div class="nav-item community-name">
+                    {{post.title}}
+                </div>
+                <div class="nav-item join">
+                    <a href="{% url 'Community_detail' post.pk %}">
+                        join
+                    </a>
+                </div> 
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="footer">
+        <a class="button" href="{% url 'new' %}">커뮤니티 만들기</a>
+        <a class="button" href="{% url 'my' %}">마이페이지</a>
+    </div>
+    
+{% endblock %}

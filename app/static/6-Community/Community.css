@@ -1,0 +1,58 @@
+@import url(base.css);
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.title{
+    background-color: rgb(209, 243, 220);
+}
+
+.mainbox{
+    background-color: rgba(0, 63, 0, 0.185);
+    width: 100%;
+    height: 100%;
+}
+
+.main-oneline{
+    margin: 0 auto;
+    width: 70%;
+    height: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.nav-item{
+    box-sizing: border-box;
+    height: 100%;
+    padding: 2px;
+    border: 1px solid gray;
+    text-align: center;
+    font-size: 15px;
+    margin: 5px 15px 5px 5px;
+}
+
+.community-name{
+    width: 70%;
+}
+
+.join{
+    width: 20%;
+}
+
+.button{
+    box-sizing: border-box;
+    height: 25px;
+    width : 120px;
+    background-color : rgb(74, 74, 139);
+    color : #eee9e9;
+    font-size: 16px;
+    padding: 2px;
+    text-align: center;
+    margin-left: 15px;
+}

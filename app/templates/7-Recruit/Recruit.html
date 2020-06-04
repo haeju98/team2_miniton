@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '7-Recruit/Recruit.css' %}" type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <div class="header">
+        <div class="title">Recruit</div>
+    </div>
+
+    <div class="mainbox">
+        <h1>Wellcome to I'll VEGAN</h1>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquamerat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate</p>
+    </div>
+
+    <a class="send">지원하기</a>
+{% endblock %}

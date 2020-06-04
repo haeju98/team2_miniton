@@ -1,0 +1,53 @@
+@import url(base.css);
+
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.title{
+    background-color: rgb(209, 243, 220);
+}
+
+.middlebar{
+    width: 550px;
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.Seoul{
+    background-color: rgb(209, 243, 220);
+    width: 200px;
+    height: 100%;
+}
+
+.Store_by_Region{
+    width: 150px;
+    height: 40%;
+}
+
+.nav-item {
+    width: 100px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid gray;
+    text-align: center;
+    margin-right: 15px;
+}
+
+.Store {
+    width: 30px;
+    height: 40%;
+}
+
+.mainbox{
+    height: 500px;
+    background-color: rgb(1, 82, 1);
+    color: white;
+    font-size: 15px;
+    text-align: center;
+}

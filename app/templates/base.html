@@ -1,0 +1,76 @@
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    {% block css %}
+    {% endblock %}
+    <title>I'll VEGAN</title>
+</head>
+<body>
+    <div class="base">
+        <img class="logo" src="../picture/logo.png">
+        <div class="category">
+            <a class="menu-icon" href="{% url 'home' %}">
+                HOME
+            </a>
+            <a class="menu-icon" href="{% url 'Restaurant' %}">
+                Restaurant
+            </a>
+            <a class="menu-icon" href="{% url 'Store' %}">
+                Store
+            </a>
+            <a class="menu-icon" href="{% url 'Magazine' %}">
+                Magazine
+            </a>
+            <a class="menu-icon" href="{% url 'Community' %}">
+                Community
+            </a>
+            <a class="menu-icon" href="{% url 'Recruit' %}">
+                Recruit
+            </a>
+        </div>
+        <div class="join">
+            {% if user.is_authenticated %}
+                <div class="menu-icon">
+                    안녕하세요, {{user.username}}님
+                </div>
+                <a class="menu-icon" href="{% url 'logout' %}">
+                    Logout
+                </a>
+                <a class="menu-icon" href="{% url 'Contactus' %}">
+                    Contact us
+                </a>
+
+            {% else %}
+                <a class="menu-icon" href="{% url 'login' %}">
+                    Login
+                </a>
+                <a class="menu-icon" href="{% provider_login_url 'kakao' %}">
+                    Kakao Login
+                </a>
+                <a class="menu-icon" href="{% provider_login_url 'google' %}">
+                    Google Login
+                </a>
+                <a class="menu-icon" href="{% url 'signup' %}">
+                    Join us
+                </a>
+                <div class="menu-icon">
+                    Contact us
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="mainbar">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

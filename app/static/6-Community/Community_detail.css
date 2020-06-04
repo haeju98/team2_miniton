@@ -1,0 +1,73 @@
+@import url(base.css);
+
+.head-bar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.title{
+    background-color: rgb(209, 243, 220);
+}
+
+.comments{
+    width: 550px;
+    box-sizing: border-box;
+}
+
+.comment{
+    height: 20px;
+    width: 300px;
+    background-color: #eeeef6;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.material-icons{
+    transform: rotate(180deg);
+}
+
+.comment_cont{
+    height: 100%;
+    width: 70%;
+}
+
+.del_cont{
+    height: 100%;
+    width: 20%;
+    color: rgb(74, 74, 139);
+}
+
+.new_comment{
+    height: 20px;
+    width: 309px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.new_content{
+    box-sizing: border-box;
+    height: 25px;
+    width: 80%;
+    display: flex;
+    border: 1px solid #eee9e9; 
+    color: #666;
+    padding: 3px 0 0 5px;
+    font-size: 15px;
+}
+
+.button {
+    box-sizing: border-box;
+    height: 25px;
+    width : 82px;
+    background-color: white;
+    color: rgb(74, 74, 139);
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    text-decoration: underline;
+    letter-spacing: -1px;
+}

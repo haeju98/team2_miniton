@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '5-Magazine/Magazine.css' %}" type='text/css'>
+{% endblock %}
+
+{% block content %}
+    <div class="header">
+        <div class="title">Magazine</div>
+    </div>
+
+    <div class="mainbox">
+        <div class="main-oneline">
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+        </div>
+        <div class="main-oneline">
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+            <div class="nav-item main">news</div>
+        </div>
+    </div>
+{% endblock %}
