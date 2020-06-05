@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     {% block css %}
     {% endblock %}
     <title>I'll VEGAN</title>
@@ -52,15 +53,7 @@
                 <a class="menu-icon" href="{% url 'login' %}">
                     Login
                 </a>
-                <a class="menu-icon" href="{% provider_login_url 'kakao' %}">
-                    Kakao Login
-                </a>
-                <a class="menu-icon" href="{% provider_login_url 'google' %}">
-                    Google Login
-                </a>
-                <a class="menu-icon" href="{% url 'signup' %}">
-                    Join us
-                </a>
+
                 <div class="menu-icon">
                     Contact us
                 </div>

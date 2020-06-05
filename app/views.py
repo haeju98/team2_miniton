@@ -1,9 +1,17 @@
+import json
 from django.shortcuts import render,redirect
-from .models import Post, Comment
+from .models import Post, Comment,UserInfo,Like,Bookmark,Survey,CardNews
 import datetime
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib.auth.decorators import login_required
+
+#KAKAO API
+from project.settings import KAKAO_JS_KEY
+
+#AJAX
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 #1-startpage
@@ -24,6 +32,29 @@ def home(request):
 def Restaurant(request):
     posts=Post.objects.all()
     return render(request,'3-Restaurant/Restaurant.html',{'posts':posts})
+
+def Restaurant_detail(request):
+    user = 1
+    post = 1
+    isLike = Like.objects.filter(user_id=User.objects.get(pk=user), post_id=Post.objects.get(pk=post))
+    return render(request,'3-Restaurant/Restaurant_detail.html',{'KAKAO_JS_KEY': KAKAO_JS_KEY, 'isLike': bool(isLike)})
+
+@csrf_exempt
+def like(request):
+    user = 1
+    post = 1
+    # 사실 지금 이건 없어도 됨
+    if request.method == "POST":
+        isLike = request.POST.get('isLike') == 'true'
+        if isLike:  # 좋아요 취소
+            Like.objects.filter(user_id=User.objects.get(pk=user),
+                                post_id=Post.objects.get(pk=post)).delete()
+        else:  # 좋아요 추가
+            Like(user_id=User.objects.get(pk=user),
+                 post_id=Post.objects.get(pk=post)).save()
+
+        context = {'message': "성공적으로 완료되었습니다."}
+    return HttpResponse(json.dumps(context), content_type="application/json")
 
 def Seongbuk(request):
     #posts=Post.objects.filter(regionname="Seongbuk")

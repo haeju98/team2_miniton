@@ -1,24 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    {% block content %}
-        <h1>로그인</h1>
-        
-        {% if error %}
-        <h3 style="color: red;">{{error}}</h3>
-        {% endif %}
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
 
-        <form method="POST">
-            {% csrf_token %}
-            <input type="text" name="username" placeholder="이름">
-            <input type="password" name="password" placeholder="비밀번호">
-            <button type="submit">로그인</button>
-        </form>
-    {% endblock content %}
-</body>
-</html>
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'registration/login.css' %}" type='text/css'>
+{% endblock %}
+
+{% block content %}
+
+<div class="login">
+    <div class="login-box">
+        <span id="bold">일반 로그인</span>
+        <div class="login-box-input">
+            <form method="POST">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="아이디">
+                <input type="password" name="password" placeholder="비밀번호">
+                <div class="flex justify">
+                    <a class="login-box-signup" href="{% url 'signup' %}">
+                        회원가입
+                    </a>
+                    <button type="submit">로그인</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="login-box">
+        <span id="bold">간편 로그인</span>
+        <div class="login-kakao">
+            <a  href="{% provider_login_url 'kakao' %}">
+                Kakao Login
+            </a>
+        </div>
+        <div class="login-google">
+            <a href="{% provider_login_url 'google' %}">
+                Google Login
+            </a>
+        </div>
+    </div>
+</div>
+<div class="ad">
+</div>
+{% endblock %}
