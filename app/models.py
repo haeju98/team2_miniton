@@ -41,7 +41,6 @@ class UserInfo(models.Model):
     user_number = models.CharField(max_length=50)
     user_email = models.CharField(max_length=50)
 
-
 class Like(models.Model):
     user_id = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='like_user')
