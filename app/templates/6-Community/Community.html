@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="header">
+    <div class="head-bar">
         <div class="title">Community</div>
     </div>
 
@@ -26,8 +26,8 @@
     </div>
 
     <div class="footer">
-        <a class="button" href="{% url 'new' %}">커뮤니티 만들기</a>
-        <a class="button" href="{% url 'my' %}">마이페이지</a>
+        <a class="button" href="{% url 'Community_new' %}">커뮤니티 만들기</a>
+        <a class="button" href="{% url 'Community_my' %}">마이페이지</a>
     </div>
     
 {% endblock %}

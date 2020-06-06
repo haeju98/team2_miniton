@@ -6,24 +6,64 @@
 {% endblock %}
 
 {% block content %}
-    <div class="header">
-        <div class="title">Magazine</div>
+    <div class="head-bar">
+        <div class="head-title">Magazine</div>
     </div>
 
     <div class="mainbox">
-        <div class="main-oneline">
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
+        <div class="line1">
+            <div class="news">
+                <a href="{% url 'news1' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/1-fashion/비건패션브랜드1.png">
+                </a>
+                <div class="title">비건패션브랜드</div>
+            </div>
+            <div class="news">
+                <a href="{% url 'news2' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/2-cosmetics/비건화장품1.jpg">
+                </a>
+                <div class="title">에디터픽!<br>비건뷰티아이템</div>
+            </div>
+            <div class="news">
+                <a href="{% url 'news3' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/3-restaurant/비건음식점1.jpg">
+                </a>
+                <div class="title">비건식당추천<br>BEST3</div>
+            </div>
+            <div class="news">
+                <a href="{% url 'news4' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/4-isoi/아이소이1.jpg">
+                </a>
+                <div class="title">이젠 비건화장품도<br>ISOI</div>
+            </div>
         </div>
-        <div class="main-oneline">
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
-            <div class="nav-item main">news</div>
+        <br>
+        <div class="line2">
+            <div class="news">
+                <a href="{% url 'news5' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/5-food(broccoli)/브로콜리1.JPG">
+                </a>
+                <div class="title">두 얼굴의 브로콜리</div>
+            </div>
+            <div class="news">
+                <a href="{% url 'news6' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/6-fashion(pineapple)/파인애플가죽1.png">
+                </a>
+                <div class="title">파인애플로 가죽을?</div>
+            </div>
+            <div class="news">
+                <a href="{% url 'news7' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/7-bread/비건빵집1.jpg">
+                </a>
+                <div class="title">서울지역<br>비건빵집 추천4</div>
+            </div>
+            <div class="news">
+                <a href="{% url 'news8' %}" class="picture">
+                    <img class="pic" src="../../static/picture/magazine_content/8-sweden/스웨덴비건문화1.png">
+                </a>
+                <div class="title">스웨덴의 비건문화</div>
+            </div>
         </div>
     </div>
+
 {% endblock %}
