@@ -36,8 +36,12 @@ urlpatterns = [
 
     #4-Store
     path('Store/',views.Store,name="Store"),
-    path('Food/',views.Food,name="Food"),
-    path('Cosmetics/',views.Cosmetics,name="Cosmetics"),
+    path('Store_detail/<int:product_pk>',views.Store_detail,name="Store_detail"),
+    path('schoolfood/',views.schoolfood,name="schoolfood"),
+    path('sidedish/',views.sidedish,name="sidedish"),
+    path('sauce/',views.sauce,name="sauce"),
+    path('snack/',views.snack,name="snack"),
+    path('meet/',views.meet,name="meet"),
 
     #5-Magazine
     path('Magazine/',views.Magazine,name="Magazine"),

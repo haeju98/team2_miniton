@@ -53,12 +53,13 @@ body{
     text-decoration: none;
     /* border: 1px solid gray; */
     text-align: center;
+    align-items: center;
     
 }
 
 .menu-username{
     color: white;
-    font-size: 17px;
+    font-size: 15px;
     padding-right: 5px;
     display: flex;
     justify-content: center;
@@ -70,12 +71,13 @@ body{
 .menu-icon {
 	display: inline-block;
 	width: 100px;
-    height: 54px;
+    height: 56px;
     
 	text-align: center;
 	text-decoration: none;
 	line-height: 54px;
-	outline: none;
+    outline: none;
+    
 }
 .menu-icon::before,
 .menu-icon::after {
@@ -96,7 +98,7 @@ body{
 
 .menu-icon {
 	background-color: #8F9E68;
-	color: #fff;
+    color: #fff;
 }
 .menu-icon:hover {
 	background-color: #607540;
