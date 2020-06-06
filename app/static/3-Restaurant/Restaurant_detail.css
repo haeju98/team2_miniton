@@ -29,8 +29,14 @@ img {
     padding-left:10px;
 }
 .mainbar{
-    margin: 0px 200px;
+    margin: 0px 100px;
 }
+
+.choose-bar2 {
+    margin: 20px 0;
+    border-bottom: 2px gray solid;
+    background-color: bisque;
+  }
 .flex{
     display: flex;
 }
@@ -50,14 +56,14 @@ img {
     margin-bottom: 10px;
 }
 .information{
-    margin: 0px 30px 30px 30px;
+    width:100%;
 }
 .photo{
     border: 2px gray solid;
 }
 
 .info{
-    width: 100%;
+    width: 60%;
     margin-left:30px;
     border-bottom: 2px gray solid;
     margin-left:20px;

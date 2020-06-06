@@ -9,9 +9,9 @@ class Post(models.Model):
     pNumber = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
     website = models.CharField(max_length=150)
-    likes = models.CharField(max_length=50)
     category =  models.CharField(max_length=50)
-
+    likes = models.CharField(max_length=50)
+    grade = models.FloatField(default = 0)
     def __str__(self):
         return self.name
 
@@ -20,19 +20,15 @@ class Product(models.Model):
     likes = models.CharField(max_length=50)
     category =  models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.name
 
 class Comment(models.Model):
     post = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='comments')
     user_id = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='writer')
-    grade = models.CharField(max_length=50)
+    grade = models.FloatField()
     content = models.TextField()
 
-    def __str__(self):
-        return self.user_id
 
 
 class UserInfo(models.Model):
@@ -43,16 +39,13 @@ class UserInfo(models.Model):
     user_number = models.CharField(max_length=50)
     user_email = models.CharField(max_length=50)
 
-    def __str__(self):
-        return self.user_id
 
 class Like(models.Model):
     user_id = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='like_user')
     post_id = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='like_post')
-    def __str__(self):
-        return self.user_id
+
 class Survey(models.Model):
     user_id = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='survey_info')
