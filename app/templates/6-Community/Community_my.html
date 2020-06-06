@@ -2,7 +2,7 @@
 
 {% block css %}
     {% load static %}
-    <link rel="stylesheet" href="{% static '6-Community/my.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% static '6-Community/Community_my.css' %}" type='text/css'>
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,7 @@
     
     <div class="bottom">
         <a class="button" href="{% url 'Community' %}">홈으로</a>
-        <a class="button" href="{% url 'new' %}">커뮤니티 추가하기</a>
+        <a class="button" href="{% url 'Community_new' %}">커뮤니티 추가하기</a>
     </div>
 
 {% endblock content %}

@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render, redirect
-from .models import Post, Product, Comment, UserInfo, Like, Survey, CardNews
+from .models import Post, Product, Comment, UserInfo, Like, Survey, CardNews_model,Community_model,Community_comment
 import datetime
 from django.contrib.auth.models import User
 from django.contrib import auth
@@ -126,67 +126,87 @@ def meet(request):
 
 
 
-# 5-Magazine
+#5-Magazine
 def Magazine(request):
-    posts = Post.objects.all()
-    return render(request, '5-Magazine/Magazine.html',{'posts':posts})
+    posts=CardNews_model.objects.all()
+    return render(request,'5-Magazine/Magazine.html',{'posts':posts})
+
+def news1(request):
+    return render(request,'5-Magazine/Magazine_detail/news1.html')
+
+def news2(request):
+    return render(request,'5-Magazine/Magazine_detail/news2.html')
+
+def news3(request):
+    return render(request,'5-Magazine/Magazine_detail/news3.html')
+
+def news4(request):
+    return render(request,'5-Magazine/Magazine_detail/news4.html')
+
+def news5(request):
+    return render(request,'5-Magazine/Magazine_detail/news5.html')
+
+def news6(request):
+    return render(request,'5-Magazine/Magazine_detail/news6.html')
+
+def news7(request):
+    return render(request,'5-Magazine/Magazine_detail/news7.html')
+
+def news8(request):
+    return render(request,'5-Magazine/Magazine_detail/news8.html')
 
 
-# 6-Community
+#6-Community
 def Community(request):
-    posts = Post.objects.all()
-    return render(request, '6-Community/Community.html',{'posts':posts})
-
+    posts=Community_model.objects.all()
+    return render(request,'6-Community/Community.html',{'posts':posts})
 
 @login_required(login_url='/registration/login')
-def new(request):
-    if request.method =='POST':
-        new_post =Post.objects.create(
+def Community_new(request):
+    if request.method=='POST':
+        new_post=Community_model.objects.create(
             title=request.POST['title'],
             content=request.POST['content'],
             author=request.user
         )
-        return redirect('Community_detail', new_post.pk)
-    return render(request, '6-Community/new.html')
+        return redirect('Community_detail',new_post.pk)
+    return render(request, '6-Community/Community_new.html')
 
-def delete(request, post_pk):
-    post = Post.objects.get(pk=post_pk)
+def Community_delete(request,post_pk):
+    post=Community_model.objects.get(pk=post_pk)
     post.delete()
     return redirect('Community')
 
-def edit(request, post_pk):
-    post = Post.objects.get(pk=post_pk)
-    if request.method =='POST':
-        Post.objects.filter(pk=post_pk).update(
+def Community_edit(request,post_pk):
+    post=Community_model.objects.get(pk=post_pk)
+    if request.method=='POST':
+        Community_model.objects.filter(pk=post_pk).update(
             title=request.POST['title'],
             content=request.POST['content'],
         )
         return redirect('Community_detail', post_pk)
-    return render(request, '6-Community/edit.html', {'post':post})
+    return render(request, '6-Community/Community_edit.html',{'post':post})
 
+def Community_past(request):
+    posts=Community_model.objects.all()
+    return render(request,'6-Community/Community_my.html',{'posts':posts})
 
-def past(request):
-    posts = Post.objects.all()
-    return render(request, '6-Community/my.html',{'posts':posts})
-
-def Community_detail(request, post_pk):
-    post = Post.objects.get(pk=post_pk)
-    if request.method =="POST":
-        Comment.objects.create(
+def Community_detail(request,post_pk):
+    post=Community_model.objects.get(pk=post_pk)
+    if request.method=="POST":
+        Community_comment.objects.create(
             post=post,
             content=request.POST['content'],
             author=request.user
         )
-        return redirect('Community_detail', post_pk)
-    return render(request, '6-Community/Community_detail.html',{'post':post})
-
+        return redirect('Community_detail',post_pk)
+    return render(request,'6-Community/Community_detail.html',{'post':post})
 
 @login_required(login_url='/registration/login')
-def delete_comment(request, post_pk,comment_pk):
-    comment = Comment.objects.get(pk=comment_pk)
+def delete_comment(request,post_pk,comment_pk):
+    comment=Community_comment.objects.get(pk=comment_pk)
     comment.delete()
     return redirect('Community_detail', post_pk)
-
 # 7-Recruit
 def Recruit(request):
     posts = Post.objects.all()

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block css %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static '5-Magazine/Magazine_detail/news8.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">s
+{% endblock %}
+
+{% block content %}
+    <div class="head-bar">
+        <div class="title">Magazine</div>
+    </div>
+
+    <div class="mid-bar">
+        <h1>스웨덴의 비건문화</h1>
+    </div>
+
+    <div class="main">
+        <div id="slide">
+            <input type="radio" name="pos" id="pos1" checked>
+            <input type="radio" name="pos" id="pos2">
+            <input type="radio" name="pos" id="pos3">
+            <input type="radio" name="pos" id="pos4">
+            <input type="radio" name="pos" id="pos5">
+            <input type="radio" name="pos" id="pos6">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <p class="pos">
+              <label for="pos1"></label>
+              <label for="pos2"></label>
+              <label for="pos3"></label>
+              <label for="pos4"></label>
+              <label for="pos5"></label>
+              <label for="pos6"></label>
+            </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <a class="button" href="{% url 'Magazine' %}">홈으로</a>
+        {% if user.is_authenticated and post.author.pk == user.pk %}
+        <a class="button" href="{% url 'Magazine_edit' post.pk %}">수정하기</a>
+        <a class="button" href="{% url 'Magazine_delete' post.pk %}">삭제하기</a>
+    </div>
+{% endif %}
+{% endblock %}

@@ -63,8 +63,25 @@ class Survey(models.Model):
 #        return result
 
 
-class CardNews(models.Model):
+#5-Magazine
+class CardNews_model(models.Model):
     title = models.CharField(max_length=50)
-    content = models.TextField()
+    photo = models.FileField(blank=True)
+    author=models.ForeignKey(User,on_delete=models.CASCADE,related_name="Cardnews_model")
+
     def __str__(self):
         return self.title
+
+#6-Community
+class Community_model(models.Model):
+    title = models.CharField(max_length=50)
+    content = models.TextField()
+    author=models.ForeignKey(User,on_delete=models.CASCADE,related_name="Community_model")
+
+    def __str__(self):
+        return self.title
+
+class Community_comment(models.Model):
+    post=models.ForeignKey(Community_model,on_delete=models.CASCADE, related_name='Community_comment')
+    content=models.TextField(null=True)
+    author=models.ForeignKey(User,on_delete=models.CASCADE,related_name="Community_comment")

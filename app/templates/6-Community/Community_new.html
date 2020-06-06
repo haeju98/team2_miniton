@@ -2,7 +2,7 @@
 
 {% block css %}
     {% load static %}
-    <link rel="stylesheet" href="{% static '6-Community/edit.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% static '6-Community/Community_new.css' %}" type='text/css'>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,7 @@
             <textarea class="contentinput" name="content" cols="30" rows="10" placeholder="설명을 입력해주세요">{{post.content}}</textarea>    
         </div>
         <div class="bottom">
-            <button class="button" type="submit">수정하기</button>
+            <button class="button" type="submit">등록하기</button>
         </div>
     </form>
-{% endblock content %}
+{% endblock %}

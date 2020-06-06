@@ -1,6 +1,6 @@
 @import url(base.css);
 
-.header{
+.head-bar{
     width: 100%;
     display: flex;
     justify-content: center;
@@ -8,34 +8,55 @@
     margin: 20px 0;
 }
 
-.title{
-    background-color: rgb(209, 243, 220);
-}
+.head-title{
+    font-family: 'Lobster', cursive;
+    font-size: 75px;
+    font-weight: 700;
+    color: #607540;
+    padding-bottom: 1%;
+  }
 
-.nav-item{
-    border: 1px solid gray;
-    text-align: center;
-    margin-right: 15px;
-}
-
-.mainbox{
-    background-color: rgba(0, 63, 0, 0.185);
+.line1{
     width: 100%;
     height: 100%;
-}
-
-.main-oneline{
-    margin: 0 auto;
-    width: 80%;
-    height: 30%;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
 }
 
-.main{
-    width: 20%;
-    height: 150px;
+.news{
+    border: 1px solid #8F9E68;
+    text-align: center;
+    margin: 0 15px;
+    width: 180px;
+    height: 250px;
+}
+
+.picture{
+    width: 180px;
+    height: 200px;
+}
+
+.pic{
+    width: 180px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.title{
+    box-sizing: border-box;
+    width: 180px;
+    height: 50px;
     font-size: 15px;
-    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5px;
+}
+
+.line2{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
 }

@@ -3,10 +3,11 @@
 {% block css %}
     {% load static %}
     <link rel="stylesheet" href="{% static '6-Community/Community.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <div class="header">
+    <div class="head-bar">
         <div class="title">Community</div>
     </div>
 
@@ -16,18 +17,16 @@
                 <div class="nav-item community-name">
                     {{post.title}}
                 </div>
-                <div class="nav-item join">
-                    <a href="{% url 'Community_detail' post.pk %}">
-                        join
-                    </a>
-                </div> 
+                <a class="nav-item commu-join" href="{% url 'Community_detail' post.pk %}">
+                    join
+                </a>
             </div>
         {% endfor %}
     </div>
 
     <div class="footer">
-        <a class="button" href="{% url 'new' %}">커뮤니티 만들기</a>
-        <a class="button" href="{% url 'my' %}">마이페이지</a>
+        <a class="button" href="{% url 'Community_new' %}">커뮤니티 만들기</a>
+        <a class="button" href="{% url 'Community_my' %}">마이페이지</a>
     </div>
     
 {% endblock %}

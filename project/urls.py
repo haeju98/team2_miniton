@@ -44,15 +44,23 @@ urlpatterns = [
 
     #5-Magazine
     path('Magazine/',views.Magazine,name="Magazine"),
+    path('Magazine_detail/news1',views.news1,name="news1"),
+    path('Magazine_detail/news2',views.news2,name="news2"),
+    path('Magazine_detail/news3',views.news3,name="news3"),
+    path('Magazine_detail/news4',views.news4,name="news4"),
+    path('Magazine_detail/news5',views.news5,name="news5"),
+    path('Magazine_detail/news6',views.news6,name="news6"),
+    path('Magazine_detail/news7',views.news7,name="news7"),
+    path('Magazine_detail/news8',views.news8,name="news8"),
 
     #6-Community
     path('Community/',views.Community,name="Community"),
     path('Community_detail/<int:post_pk>',views.Community_detail,name="Community_detail"),
     path('delete_comment/<int:post_pk>/<int:comment_pk>',views.delete_comment,name="delete_comment"),
-    path('new/',views.new,name="new"),
-    path('my/',views.past,name="my"),
-    path('delete/<int:post_pk>',views.delete,name="delete"),
-    path('edit/<int:post_pk>',views.edit,name="edit"),
+    path('Community_new/',views.Community_new,name="Community_new"),
+    path('Community_my/',views.Community_past,name="Community_my"),
+    path('Community_delete/<int:post_pk>',views.Community_delete,name="Community_delete"),
+    path('Community_edit/<int:post_pk>',views.Community_edit,name="Community_edit"),
 
     #7-Recruit
     path('Recruit/',views.Recruit,name="Recruit"),
