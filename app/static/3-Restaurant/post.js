@@ -1,16 +1,14 @@
-function like(isLike) {
+function like(isLike,pk) {
   //   post 아이디를 줘야함
   $.ajax({
     cache: false,
     url: "user/like",
     data: {
       isLike: isLike,
+      post_pk: pk,
     },
     type: "POST",
     success: (result) => {
-      console.log(
-        "hihi"
-        );
       if (isLike) $("#isLike").removeClass("red");
       else $("#isLike").addClass("red");
     },
