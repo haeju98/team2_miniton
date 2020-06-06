@@ -17,17 +17,17 @@
     <div class="Store_by_Region">
       <div class="Regin-Row">
           <a class="Regin-Box" href="{% url 'seoul_1' %}">서초 강남</a>
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">동작 관악 금천</a>
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">강서 양천 영등포 구로</a>
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">도봉 강북 성북 노원</a>
+          <a class="Regin-Box" href="{% url 'seoul_2' %}">동작 관악 금천</a>
+          <a class="Regin-Box" href="{% url 'seoul_3' %}">강서 양천 영등포 구로</a>
+          <a class="Regin-Box" href="{% url 'seoul_4' %}">도봉 강북 성북 노원</a>
         <!-- </div> -->
       <!-- <div class="Regin-Row"> -->
       </div>
         <div class="Regin-Row">
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">동대문 중랑 성동 광진</a>
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">은평 마포 서대문</a>
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">종로 중구 용산</a>
-          <a class="Regin-Box" href="{% url 'seoul_1' %}">강동 송파</a>
+          <a class="Regin-Box" href="{% url 'seoul_5' %}">동대문 중랑 성동 광진</a>
+          <a class="Regin-Box" href="{% url 'seoul_6' %}">은평 마포 서대문</a>
+          <a class="Regin-Box" href="{% url 'seoul_7' %}">종로 중구 용산</a>
+          <a class="Regin-Box" href="{% url 'seoul_8' %}">강동 송파</a>
         </div>
       </div>
     </div>
@@ -46,7 +46,7 @@
     
   </form>
 </div>
-{% for post in posts%}
+{% for post in posts %}
 <div class="Store">
     <div class="Store-Box">
         <span><span id="name">이름 : </span>{{post.name}} </span><br>
@@ -69,8 +69,3 @@
 </div>
 {% endfor %}
   {% endblock %}
-
-  <!-- <h2> button style 3 </h2>
-   <a href="#" class="btn3">
-    Button 3
-  </a> -->

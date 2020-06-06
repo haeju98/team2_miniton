@@ -31,8 +31,14 @@ urlpatterns = [
     path('Restaurant_detail/<int:post_pk>',views.Restaurant_detail,name="Restaurant_detail"),
     path('Restaurant_detail/user/like', views.like, name="like"),
     path('post_delete_comment/<int:post_pk>/<int:comment_pk>', views.post_delete_comment,name="post_delete_comment"),
-    path('Seongbuk/',views.Seongbuk,name="Seongbuk"),
-    path('Mapo/',views.Mapo,name="Mapo"),
+    path('seoul_1/',views.seoul_1,name="seoul_1"),
+    path('seoul_2/',views.seoul_2,name="seoul_2"),
+    path('seoul_3/',views.seoul_3,name="seoul_3"),
+    path('seoul_4/',views.seoul_4,name="seoul_4"),
+    path('seoul_5/',views.seoul_5,name="seoul_5"),
+    path('seoul_6/',views.seoul_6,name="seoul_6"),
+    path('seoul_7/',views.seoul_7,name="seoul_7"),
+    path('seoul_8/',views.seoul_8,name="seoul_8"),
 
     #4-Store
     path('Store/',views.Store,name="Store"),
