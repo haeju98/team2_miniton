@@ -1,5 +1,9 @@
 @import url(base.css);
 
+body{
+    background-image: url('../picture/community.jpg');
+    background-size: cover;
+}
 .head-bar{
     width: 100%;
     display: flex;
@@ -25,8 +29,8 @@
 .main-oneline{
     height: 30%;
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-left: 70px;
 }
 
 .nav-item{
@@ -46,6 +50,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    border-radius: 10px;
 }
 
 .commu-join{
@@ -63,20 +69,32 @@
     text-align: center;
 }
 
+.commu-join:hover {
+	background-color:#D8C49F ;
+}
+
 .footer{
-    width: 60%;
+    width: 45%;
     margin: 10px auto;
+    text-align: center;
+    border: 5px solid #F9E7D3;
+    border-radius: 10px;
 }
 
 .button {
     box-sizing: border-box;
     height: 25px;
-    width : 82px;
-    background-color: white;
-    color: rgb(74, 74, 139);
-    font-size: 16px;
+    color: #607540;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     border: none;
     text-decoration: underline;
     letter-spacing: -1px;
+    margin: 10px auto;
+    margin-right: 25px;
+}
+
+.button:hover {
+	color: #8F9E68;
 }

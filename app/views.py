@@ -25,7 +25,26 @@ def main(request):
 # 2-homepage
 def home(request):
     posts = Post.objects.all()
-    return render(request, '2-homepage/home.html', {'posts': posts})
+    result = ''
+    if request.user.is_anonymous:
+         return render(request, '2-homepage/home.html', {'posts':posts,'result': result})
+    else:
+        semi_type = UserInfo.objects.get(user_id=request.user)
+        if(semi_type.user_type == '1'):
+            result = 'Vegan'
+        elif(semi_type.user_type == '2'):
+            result = 'Lacto'
+        elif(semi_type.user_type == '3'):
+            result = 'Ovo'
+        elif(semi_type.user_type == '4'):
+            result = 'Lacto-Ovo'
+        elif(semi_type.user_type == '5'):
+            result = 'Pesco'
+        elif(semi_type.user_type == '6'):
+            result = 'Pollo'
+        elif(semi_type.user_type == '7'):
+            result = 'Flexitarian'
+    return render(request, '2-homepage/home.html', {'posts':posts,'result': result})
 
 
 # 3-Restaurant
@@ -43,10 +62,7 @@ def Restaurant(request):
 
 def Restaurant_detail(request, post_pk):
     post = Post.objects.get(pk=post_pk)
-    isLike = Like.objects.filter(user_id=User.objects.get(
-        pk=request.user.pk), post_id=Post.objects.get(pk=post_pk))
-
-
+    isLike = Like.objects.filter(user_id=User.objects.get(pk=request.user.pk), post_id=Post.objects.get(pk=post_pk))
     if(request.method == "POST"):
         Comment.objects.create(
             post=post,
@@ -89,15 +105,113 @@ def like(request):
     return HttpResponse(json.dumps(context), content_type="application/json")
 
 
-def Seongbuk(request):
-    # posts=Post.objects.filter(regionname="Seongbuk")
-    return render(request, '3-Restaurant/Restaurant_by_Region/Seongbuk.html')#{'posts':posts}
+def seoul_1(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="서초구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="강남구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_1.html',{'posts':new_post})#
 
-
-def Mapo(request):
-    # posts=Post.objects.filter(regionname="Mapo)
-    return render(request, '3-Restaurant/Restaurant_by_Region/Mapo.html')#{'posts':posts}
-
+def seoul_2(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="동작구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="관악구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="금천구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_2.html',{'posts':new_post})#{'posts':posts}
+def seoul_3(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="강서구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="양천구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="영등포구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="구로구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_3.html',{'posts':new_post})#{'posts':posts}
+def seoul_4(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="도봉구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="강북구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="성북구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="노원구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_4.html',{'posts':new_post})#{'posts':posts}
+def seoul_5(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="동대문구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="중랑구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="성동구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="광진구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_5.html',{'posts':new_post})#{'posts':posts}
+def seoul_6(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="은평구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="마포구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="서대문구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_6.html',{'posts':new_post})#{'posts':posts}
+def seoul_7(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="종로구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="중구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]=="용산구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_7.html',{'posts':new_post})#{'posts':posts}
+def seoul_8(request):
+    posts=Post.objects.all()
+    city=[]
+    new_post=[]
+    for post in posts:
+        temp = post.location
+        if(temp[3]+temp[4]+temp[5]=="강동구"):
+            new_post.append(post)
+        elif(temp[3]+temp[4]+temp[5]=="송파구"):
+            new_post.append(post)
+    return render(request, '3-Restaurant/Restaurant_by_Region/seoul_8.html',{'posts':new_post})#{'posts':posts}
 
 # 4-Store
 def Store(request):
@@ -220,7 +334,7 @@ def Contactus(request):
 
 
 def signup(request):
-    if(request.method =="POST"):
+    if(request.method =="POST"): 
         found_user = User.objects.filter(username=request.POST['username'])
         if (len(found_user) >0):
             error = 'username이 이미 존재합니다'
@@ -228,15 +342,22 @@ def signup(request):
 
         new_user =User.objects.create_user(
             username=request.POST['username'],
-            password=request.POST['password']
-        )
+            password=request.POST['password'],
 
+        )
+        print(new_user.pk)
+        UserInfo.objects.create(
+            user_id=new_user,
+            user_pw=request.POST['password'],
+            user_type=request.POST['temp3']
+        )
         auth.login(
             request,
             new_user,
             backend='django.contrib.auth.backends.ModelBackend'
         )
         return redirect('home')
+
 
     return render(request, 'registration/signup.html')
 
