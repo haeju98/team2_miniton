@@ -63,7 +63,7 @@ class Survey(models.Model):
 #5-Magazine
 class CardNews_model(models.Model):
     title = models.CharField(max_length=50)
-    photo = models.ImageField(blank=True)
+    photo = models.FileField(blank=True)
     author=models.ForeignKey(User,on_delete=models.CASCADE,related_name="Cardnews_model")
 
     def __str__(self):
