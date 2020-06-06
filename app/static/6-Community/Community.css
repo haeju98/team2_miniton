@@ -1,5 +1,9 @@
 @import url(base.css);
 
+body{
+    background-image: url('../picture/community.jpg');
+    background-size: cover;
+}
 .head-bar{
     width: 100%;
     display: flex;
@@ -80,9 +84,9 @@
 .button {
     box-sizing: border-box;
     height: 25px;
-    background-color: white;
     color: #607540;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     border: none;
     text-decoration: underline;

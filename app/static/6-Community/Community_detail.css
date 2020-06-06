@@ -1,5 +1,9 @@
 @import url(base.css);
 
+body{
+    background-image: url('../picture/community_detail.jpg');
+    background-size: cover;
+}
 .head-bar{
     width: 100%;
     display: flex;
@@ -36,9 +40,10 @@
 }
 
 .content-title{
-    font-size: 25px;
+    font-size: 22px;
     margin: 10px 20px;
     color:  #607540;
+    font-weight: bolder;
 }
 
 .comments{
@@ -67,12 +72,6 @@
     width: 42%;
 }
 
-.del_cont{
-    height: 100%;
-    width: 20%;
-    color: #607540;
-}
-
 .new_comment{
     width: 50%;
     margin: 15px 0;
@@ -93,7 +92,7 @@
 
 .footer{
     width: 45%;
-    margin: 40px auto;
+    margin: 10px auto;
     text-align: center;
     border: 5px solid #F9E7D3;
     border-radius: 10px;
@@ -102,14 +101,18 @@
 .button {
     box-sizing: border-box;
     height: 25px;
-    background-color: white;
     color: #607540;
-    font-size: 18px;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     border: none;
     text-decoration: underline;
     letter-spacing: -1px;
-    margin: 10px 15px;
+    margin-right: 25px;
+}
+
+.button:hover {
+	color: #8F9E68;
 }
 
 .comment_button{

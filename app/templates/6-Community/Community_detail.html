@@ -27,7 +27,7 @@
                 <div class="comment_author">{{comment.author}}</div>
                 <div class="comment_cont">{{comment.content}}</div>
                 {% if user.is_authenticated and comment.author.pk == user.pk %}
-                    <a class="del_cont" href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
+                    <a class="button" href="{% url 'delete_comment' post.pk comment.pk %}">댓글삭제</a>
                 {% endif %}
             </div>
         {% endfor%}
