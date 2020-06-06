@@ -16,9 +16,12 @@ class Post(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
-
-    category =  models.CharField(max_length=50)
-
+    price = models.CharField(max_length=200)
+    photo = models.CharField(max_length=200)
+    link = models.CharField(max_length=200)
+    category = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
 
 class Comment(models.Model):
     post = models.ForeignKey(

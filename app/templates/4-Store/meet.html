@@ -7,7 +7,7 @@
 
 {% block content %}
     <div class="header">
-        <div class="title">Store</div>
+        <div class="title">COSMETICS</div>
     </div>
 
     <div class="middlebar">
@@ -17,19 +17,24 @@
             <a class="nav-item middle" href="{% url 'sidedish' %}">sidedish</a>
             <a class="nav-item middle" href="{% url 'sauce' %}">sauce</a>
             <a class="nav-item middle" href="{% url 'snack' %}">snack</a>
-            <a class="nav-item middle" href="{% url 'meet' %}">meet</a>
         </div>
+        <a class="back" href="{% url 'Store' %}">뒤로 가기</a>
     </div>
 
     <div class="mainbox">
-        {{% for product in products %}}
         <div class="main-oneline">
-            <div class="nav-item main">
-               {{product.name}}
-               {{product.photo}}
-               {{product.price}}
-            </div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
         </div>
-        {{% endfor %}}
+        <div class="main-oneline">
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+            <div class="nav-item main">COSMETICS 목록</div>
+        </div>
     </div>
 {% endblock %}
