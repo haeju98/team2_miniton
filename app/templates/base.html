@@ -7,6 +7,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -16,7 +17,7 @@
 </head>
 <body>
     <div class="base">
-        <img class="logo" src="../picture/logo.png">
+        <!-- <img class="logo" src="../static/picture/logo.png"> -->
         <div class="category">
             <a class="menu-icon" href="{% url 'home' %}">
                 HOME
@@ -37,16 +38,17 @@
                 Recruit
             </a>
         </div>
+
         <div class="join">
             {% if user.is_authenticated %}
-                <div class="menu-icon">
-                    안녕하세요, {{user.username}}님
+                <div class="menu-username">
+                    🥰안녕하세요, {{user.username}}님, 오늘도 아윌비건하세요 !🥰
                 </div>
                 <a class="menu-icon" href="{% url 'logout' %}">
                     Logout
                 </a>
                 <a class="menu-icon" href="{% url 'Contactus' %}">
-                    Contact us
+                    About us
                 </a>
 
             {% else %}
@@ -55,7 +57,7 @@
                 </a>
 
                 <div class="menu-icon">
-                    Contact us
+                    About Us
                 </div>
             {% endif %}
         </div>
