@@ -9,10 +9,12 @@
 }
 
 .title{
-    font-size: 20px;
-    border: 1px solid gray;
-    padding: 10px 30px;
-}
+    font-family: 'Lobster', cursive;
+    font-size: 75px;
+    font-weight: 700;
+    color: #607540;
+    padding-bottom: 1%;
+    text-decoration:underline #F8CD07;
 
 .mid-bar{
     text-align: center;
