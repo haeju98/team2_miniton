@@ -1,6 +1,6 @@
 import json
 from django.shortcuts import render,redirect
-from .models import Post, Comment,UserInfo,Like,Bookmark,Survey,CardNews
+from .models import Post, Product, Comment,UserInfo,Like,Survey,CardNews
 import datetime
 from django.contrib.auth.models import User
 from django.contrib import auth

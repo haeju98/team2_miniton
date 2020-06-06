@@ -8,14 +8,20 @@ class Post(models.Model):
     name = models.CharField(max_length=50)
     pNumber = models.CharField(max_length=50)
     location = models.CharField(max_length=50)
-    hours = models.CharField(max_length=50)
     website = models.CharField(max_length=150)
-    menu = models.CharField(max_length=50)
     likes = models.CharField(max_length=50)
+    category =  models.CharField(max_length=50)
 
     def __str__(self):
         return self.name
 
+class Product(models.Model):
+    name = models.CharField(max_length=50)
+    likes = models.CharField(max_length=50)
+    category =  models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.name
 
 class Comment(models.Model):
     post = models.ForeignKey(
@@ -37,21 +43,16 @@ class UserInfo(models.Model):
     user_number = models.CharField(max_length=50)
     user_email = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.user_id
 
 class Like(models.Model):
     user_id = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='like_user')
     post_id = models.ForeignKey(
         Post, on_delete=models.CASCADE, related_name='like_post')
-
-
-class Bookmark(models.Model):
-    user_id = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name='bookmark_user')
-    post_id = models.ForeignKey(
-        Post, on_delete=models.CASCADE, related_name='bookmark_post')
-
-
+    def __str__(self):
+        return self.user_id
 class Survey(models.Model):
     user_id = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='survey_info')
@@ -61,6 +62,8 @@ class Survey(models.Model):
     problem_4 = models.CharField(max_length=50)
     problem_5 = models.CharField(max_length=50)
 
+    def __str__(self):
+        return self.user_id
 #    def result_of_survey(problem_1,problem_2,problem_3,problem_4,problem_5):
 #        return result
 
@@ -68,3 +71,5 @@ class Survey(models.Model):
 class CardNews(models.Model):
     title = models.CharField(max_length=50)
     content = models.TextField()
+    def __str__(self):
+        return self.title
