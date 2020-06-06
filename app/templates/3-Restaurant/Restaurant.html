@@ -5,27 +5,30 @@
   href="{% static '3-Restaurant/Restaurant.css' %}"
   type="text/css"
 />
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
 {% endblock %} {% block content %}
-<div class="header">
-  <div class="title">Restaurant</div>
-</div>
-<div class="choose-bar">
-  <div class="Seoul">지역 선택하기</div>
-  <div class="Store_by_Region">
-      
-    <div class="Regin-Row">
-        <a class="Regin-Box" href="{% url 'Mapo' %}">서초구/강남구</a>
-        <a class="Regin-Box" href="{% url 'Mapo' %}">동작구/관악구/금천구</a>
-        <a class="Regin-Box" href="{% url 'Mapo' %}">강서구/양천구/영등포구/구로구</a>
+<div class="back-img">
+  <div class="header">
+    <div class="title" style="text-decoration:underline #F8CD07">Restaurant</div>
+  </div>
+  <div class="choose-bar">
+    <div class="Seoul">지역선택</div>
+    <div class="Store_by_Region">
+      <div class="Regin-Row">
+          <a class="Regin-Box" href="{% url 'Mapo' %}">서초 강남</a>
+          <a class="Regin-Box" href="{% url 'Mapo' %}">동작 관악 금천</a>
+          <a class="Regin-Box" href="{% url 'Mapo' %}">강서 양천 영등포 구로</a>
+          <a class="Regin-Box" href="{% url 'Seongbuk' %}">도봉 강북 성북 노원</a>
+        <!-- </div> -->
+      <!-- <div class="Regin-Row"> -->
       </div>
-    <div class="Regin-Row">
-      <a class="Regin-Box" href="{% url 'Seongbuk' %}">도봉구/강북구/성북구/노원구</a>
-      <a class="Regin-Box" href="{% url 'Mapo' %}">동대문구/중랑구/성동구/광진구</a>
-    </div>
-      <div class="Regin-Rowx">
-        <a class="Regin-Box" href="{% url 'Mapo' %}">은평구/마포구/서대문구</a>
-        <a class="Regin-Box" href="{% url 'Mapo' %}">종로구/중구/용산구</a>
-      <a class="Regin-Box" href="{% url 'Mapo' %}">강동구/송파구</a>
+        <div class="Regin-Row">
+          <a class="Regin-Box" href="{% url 'Mapo' %}">동대문 중랑 성동 광진</a>
+          <a class="Regin-Box" href="{% url 'Mapo' %}">은평 마포 서대문</a>
+          <a class="Regin-Box" href="{% url 'Mapo' %}">종로 중구 용산</a>
+          <a class="Regin-Box" href="{% url 'Mapo' %}">강동 송파</a>
+        </div>
       </div>
     </div>
   </div>
@@ -46,23 +49,28 @@
 {% for post in posts%}
 <div class="Store">
     <div class="Store-Box">
-        <span>{{post.name}}</span>
-        <span>{{post.grade}}</span>
+        <span><span id="name">이름 : </span>{{post.name}} </span><br>
+        <span><span id="name"> 평점 : </span>{{post.grade}}</span>
     </div>
 
     <div class="Store-Box">
-        <span>{{post.location}}</span>
+        <span><span id="name">주소 : </span>{{post.location}}</span>
     </div>
     <div class="Store-Box">
       {% if post.category == 1 %}
       <span>채식 전문</span>
       {% else %}
-      <span>채식 지원</span>
+      <span style="margin-bottom: 10px;">채식 지원</span>
       {% endif %}
   </div>
-    <div class="Store-Box">
-      <a href="{% url 'Restaurant_detail' post.pk %}">자세히 보러가기 ><</a>
+    <div class="Store-Box2">
+      <a class="btn" href="{% url 'Restaurant_detail' post.pk %}">자세히 보러가기</a>
     </div>
 </div>
 {% endfor %}
   {% endblock %}
+
+  <!-- <h2> button style 3 </h2>
+   <a href="#" class="btn3">
+    Button 3
+  </a> -->
