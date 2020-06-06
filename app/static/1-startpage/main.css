@@ -5,9 +5,8 @@ body{
 .fullscreen-video-wrap{
     position: absolute; 
     opacity: 0.8;
-    margin: 0em;
-    padding: 0em;
     width: 100%;
+    height: 100vh;
 }
 
 .mainbox{
@@ -66,7 +65,7 @@ p{
     cursor:pointer;
     transition:800ms ease all;
     outline:none;
-    opacity: 0.8;
+    /* opacity: 0.9; */
   }
 
   a:hover{
