@@ -23,7 +23,7 @@
 .mid-title{
     width: 80%;
     text-align: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #607540;
     margin-bottom: 10px;
     font-size: 35px;
     font-weight: lighter;
@@ -91,19 +91,23 @@
 }
 
 .footer{
-    width: 80%;
+    width: 45%;
     margin: 10px auto;
+    text-align: center;
+    border: 5px solid #F9E7D3;
+    border-radius: 10px;
 }
 
 .button {
     box-sizing: border-box;
     height: 25px;
-    width : 82px;
     background-color: white;
-    color: rgb(74, 74, 139);
-    font-size: 16px;
+    color: #607540;
+    font-size: 18px;
     text-align: center;
     border: none;
     text-decoration: underline;
     letter-spacing: -1px;
+    margin: 10px auto;
+    margin-right: 25px;
 }
