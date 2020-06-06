@@ -14,7 +14,7 @@
             <div class="content">
                 {% if user.is_authenticated %}
                     <div class="menu-user">
-                        안녕하세요 🥰 , <br>👩‍🔬{{user.username}}님의 성향은 "락토"입니다👨‍🔬
+                        안녕하세요 🥰 , <br>👩‍🔬{{user.username}}님의 성향은 {{result}}입니다👨‍🔬
                     </div>
                     <br>
                 {% else %}

@@ -1,23 +1,164 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load socialaccount %}
+{% providers_media_js %}
+
+{% block css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'registration/signup.css' %}" type='text/css'>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+{% endblock %}
+<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     {% block content %}
-    <h1>회원가입</h1>
+    <div class="header">
+        <div class="title" style="text-decoration:underline #F8CD07">Sign up </div>
+    </div>
     {% if error %}
     <h3 style="color: red;">{{error}}</h3>
     {% endif %}
     
-    <form method="POST">
+    <form method="POST" action="/registration/signup">
         {% csrf_token %}
-        <input type="text" name="username" placeholder="이름">
-        <input type="password" name="password" placeholder="비밀번호">
-        <button type="submit">가입하기</button>
+        <div class="signup">
+            <div class="highlight"></div>
+                <div class="form-box">
+                    <div class="top">
+                        <div class="radio-items">
+                        <div class="col-2">  <!-- width auto important, 소수점 백그라운드 이슈로 인해 auto 설정 -->
+                            <input id="c1" class="only-sr checked" type="radio" name="temp3" value="1" checked onclick="chooseForm(this.name)">
+                            <label for="c1">비건</label>
+                        </div>
+                        <div class="col-2">
+                            <input id="c2" class="only-sr" type="radio" name="temp3" value="2" onclick="chooseForm(this.name)">
+                            <label for="c2">락토</label>
+                        </div>
+                        <div class="col-2">
+                            <input id="c3" class="only-sr" type="radio" name="temp3" value="3" onclick="chooseForm(this.name)">
+                            <label for="c3">오보</label>
+                        </div>
+                        <div class="col-2">
+                            <input id="c4" class="only-sr" type="radio" name="temp3" value="4" onclick="chooseForm(this.name)">
+                            <label for="c4">락토오보</label>
+                        </div>
+                        <div class="col-2">
+                            <input id="c5" class="only-sr" type="radio" name="temp3" value="5" onclick="chooseForm(this.name)">
+                            <label for="c5">폴로</label>
+                        </div>
+                        <div class="col-2">
+                            <input id="c6" class="only-sr" type="radio" name="temp3" value="6" onclick="chooseForm(this.name)">
+                            <label for="c6">페스코</label>
+                        </div>
+                        <div class="col-2">
+                            <input id="c7" class="only-sr" type="radio" name="temp3" value="7" onclick="chooseForm(this.name)">
+                            <label for="c7">플렉시테리안</label>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="mid">
+                        <div class="vegee" id="form_1">
+                        <hi><img src="{% static 'registration/1.png' %}" alt="" ></hi>
+                        </div>
+                        <div class="vegee" id="form_2" style="display: none;">
+                        <hi><img src="{% static 'registration/2.png' %}" alt=""></hi>
+                        </div>
+                        <div class="vegee" id="form_3" style="display: none;">
+                        <hi><img src="{% static 'registration/3.png' %}" alt=""></hi>
+                        </div>
+                        <div class="vegee" id="form_4" style="display: none;">
+                        <hi><img src="{% static 'registration/4.png' %}" alt=""></hi>
+                        </div>
+                        <div class="vegee" id="form_5" style="display: none;">
+                        <hi><img src="{% static 'registration/5.png' %}" alt=""></hi>
+                        </div>
+                        <div class="vegee" id="form_6" style="display: none;">
+                        <hi><img src="{% static 'registration/6.png' %}" alt=""></hi>
+                        </div>
+                        <div class="vegee" id="form_7" style="display: none;">
+                        <hi><img src="{% static 'registration/7.png' %}" alt=""></hi>
+                        </div>
+                    </div>
+                <input type="text" name="username" id="input1" class="input-ty1" placeholder="아이디" />
+                  <input type="text" name="password" id="input2" class="input-ty1" placeholder="비밀번호" />
+                  <input type="text" name="input3" id="input3" class="input-ty2" placeholder="이메일" />
+                  <input type="text" name="input4" id="input4" class="input-ty1" placeholder="주소" />
+                  <input type="text" name="input5" id="input5" class="input-ty1" placeholder="전화번호" />
+              </div>
+            </div>
+        </div>
+        <div class="bot">
+            <button type="submit">가입하기</button>
+        </div>
     </form>
-    {% endblock content %}
-</body>
-</html>
+    <script>
+        var focus = false;
+    $("input[type='text']").on("focus", function(e) {
+      console.log(e.currentTarget.id);
+      var cur = e.currentTarget.id;
+      var cur = $("#" + cur);
+      var curWidth = cur.css("width");
+      var curHeight = cur.css("height");
+      var top = cur.offset().top;
+      var left = cur.offset().left;
+    
+      if (focus) {
+        $(".highlight").animate(
+          {
+            top: top,
+            left: left,
+            width: curWidth,
+            height: curHeight
+          },
+          500
+        );
+      } else {
+        focus = true;
+        $(".highlight").css({
+          opacity:1,
+          top: top,
+          left: left,
+          width: curWidth,
+          height: curHeight
+        });
+      }
+    });
+    /*비건 선택박스 시작*/ 
+    function hasClass(target, className) {
+      if( (' ' + target.className + ' ').replace(/[\n\t]/g, ' ').indexOf(' ' + className + ' ') > -1 ) return true;
+      return false;
+    }
+    function removeClass(target, className){
+      var elClass = ' ' + target.className + ' ';
+      while(elClass.indexOf(' ' + className + ' ') !== -1){
+           elClass = elClass.replace(' ' + className + ' ', '');
+      }
+      target.className = elClass;
+    }
+    function addClass(target, className){
+      target.className += ' ' + className;   
+    }
+    
+    if( hasClass( document.getElementsByTagName('html')[0], 'ie8' ) ) { // ie8 일 경우
+      var radios = document.querySelectorAll('input[type="radio"]'),
+          i,
+          len = radios.length;
+    　
+      for( i = 0; i < len; i++ ) {
+          radios[i].attachEvent('onchange', function(e) {
+              var siblingsChecked = this.parentNode.parentNode.querySelector('.checked'); // 이전 checked 버튼
+              
+              removeClass(siblingsChecked, 'checked'); // checked 삭제
+              addClass(this, 'checked'); // checked 부여
+          });
+      }
+    }
+    // 비건선택박스 끝
+    function chooseForm(radioName) {
+      var radios = document.getElementsByName(radioName);
+      for (var i = 0, length = radios.length; i < length; i++) {
+        document.getElementById('form_' + radios[i].value).style.display = 'none';
+        if (radios[i].checked) {
+          document.getElementById('form_' + radios[i].value).style.display = 'block';
+        }
+      }
+    }
+    </script>
+{% endblock content %}

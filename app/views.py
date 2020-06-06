@@ -25,7 +25,26 @@ def main(request):
 # 2-homepage
 def home(request):
     posts = Post.objects.all()
-    return render(request, '2-homepage/home.html', {'posts': posts})
+    result = ''
+    if request.user.is_anonymous:
+         return render(request, '2-homepage/home.html', {'posts':posts,'result': result})
+    else:
+        semi_type = UserInfo.objects.get(user_id=request.user)
+        if(semi_type.user_type == '1'):
+            result = 'Vegan'
+        elif(semi_type.user_type == '2'):
+            result = 'Lacto'
+        elif(semi_type.user_type == '3'):
+            result = 'Ovo'
+        elif(semi_type.user_type == '4'):
+            result = 'Lacto-Ovo'
+        elif(semi_type.user_type == '5'):
+            result = 'Pesco'
+        elif(semi_type.user_type == '6'):
+            result = 'Pollo'
+        elif(semi_type.user_type == '7'):
+            result = 'Flexitarian'
+    return render(request, '2-homepage/home.html', {'posts':posts,'result': result})
 
 
 # 3-Restaurant
@@ -315,7 +334,7 @@ def Contactus(request):
 
 
 def signup(request):
-    if(request.method =="POST"):
+    if(request.method =="POST"): 
         found_user = User.objects.filter(username=request.POST['username'])
         if (len(found_user) >0):
             error = 'username이 이미 존재합니다'
@@ -323,15 +342,22 @@ def signup(request):
 
         new_user =User.objects.create_user(
             username=request.POST['username'],
-            password=request.POST['password']
-        )
+            password=request.POST['password'],
 
+        )
+        print(new_user.pk)
+        UserInfo.objects.create(
+            user_id=new_user,
+            user_pw=request.POST['password'],
+            user_type=request.POST['temp3']
+        )
         auth.login(
             request,
             new_user,
             backend='django.contrib.auth.backends.ModelBackend'
         )
         return redirect('home')
+
 
     return render(request, 'registration/signup.html')
 
