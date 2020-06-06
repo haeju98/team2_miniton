@@ -36,7 +36,6 @@ urlpatterns = [
 
     #4-Store
     path('Store/',views.Store,name="Store"),
-    path('Store_detail/<int:product_pk>',views.Store_detail,name="Store_detail"),
     path('schoolfood/',views.schoolfood,name="schoolfood"),
     path('sidedish/',views.sidedish,name="sidedish"),
     path('sauce/',views.sauce,name="sauce"),
