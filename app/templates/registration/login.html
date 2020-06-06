@@ -10,7 +10,7 @@
 {% block content %}
 
 <div class="login">
-    <div class="login-box">
+    <div class="login-box" id = "left_box">
         <span id="bold">일반 로그인</span>
         <div class="login-box-input">
             <form method="POST">
@@ -29,22 +29,25 @@
     </div>
     <div class="login-box">
         <span id="bold">간편 로그인</span>
+        <div class="flex">
         <div class="login-kakao">
-            
             <a href="{% provider_login_url 'kakao' %}">
-                
+                <img src="{% static 'registration/kakao.jpg' %}" style="
+                height: 100px;
+                width: 100px;
+                margin-right: 20px;
+                " >
             </a>
         </div>
         <div class="login-google">
             <a href="{% provider_login_url 'google' %}">
                 <img src="{% static 'registration/google.png' %}" style="
-                width: 100%;
-            ">
+                height: 100px;" >
             </a>
         </div>
     </div>
+    </div>
 </div>
-
 <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 
 </head>

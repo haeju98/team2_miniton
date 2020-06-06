@@ -145,3 +145,17 @@ img {
     border-radius: 0.5em;
     padding :10px;
 }
+.comment-box-content{
+    border: 1px black solid;
+    margin-top:15px;
+}
+.comment-delete{
+    float: right;
+}
+#padding-right{
+    padding-left:10px;
+}
+.flex{
+    display: flex;
+    align-items: center;
+}
