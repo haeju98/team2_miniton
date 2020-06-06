@@ -28,8 +28,9 @@ urlpatterns = [
 
     #3-Restaurant
     path('Restaurant/',views.Restaurant,name="Restaurant"),
-    path('Restaurant_detail/',views.Restaurant_detail,name="Restaurant_detail"),
+    path('Restaurant_detail/<int:post_pk>',views.Restaurant_detail,name="Restaurant_detail"),
     path('Restaurant_detail/user/like', views.like, name="like"),
+    path('post_delete_comment/<int:post_pk>/<int:comment_pk>', views.post_delete_comment,name="post_delete_comment"),
     path('Seongbuk/',views.Seongbuk,name="Seongbuk"),
     path('Mapo/',views.Mapo,name="Mapo"),
 
