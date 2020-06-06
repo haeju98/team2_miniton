@@ -11,10 +11,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import json
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+with open(os.path.join(BASE_DIR, 'project/config/index.json')) as f:
+    secrets = json.loads(f.read())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -137,3 +140,10 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 LOGIN_REDIRECT_URL = '/'
+
+#KAKAO API
+KAKAO_JS_KEY = secrets['KAKAO']['JAVA_SCRIPT_KEY']
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join('static'), )
+

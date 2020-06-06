@@ -1,0 +1,141 @@
+@import url(base.css);
+main{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+img {
+    vertical-align: middle;
+}
+.red {
+    color: red !important;
+}
+#title-left{
+    font-size: 2em;
+    font-weight: bold;
+    padding-right:10px;
+}
+#title-right{
+    font-size: 1.2em;
+    font-weight: bold;
+    padding-left:10px;
+}
+#comment-center{
+    border-left: 1px gray solid;
+    border-right: 1px gray solid;
+    padding-left:10px;
+}
+#comment-left{
+    padding-left:10px;
+}
+.mainbar{
+    margin: 0px 200px;
+}
+.flex{
+    display: flex;
+}
+.click {
+    cursor: pointer;
+}
+.align-items{
+    align-items: center;
+}
+.right{
+    text-align: right;
+}
+.sub-title{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left:50px;
+    margin-bottom: 10px;
+}
+.information{
+    margin: 0px 30px 30px 30px;
+}
+.photo{
+    border: 2px gray solid;
+}
+
+.info{
+    width: 100%;
+    margin-left:30px;
+    border-bottom: 2px gray solid;
+    margin-left:20px;
+}
+.info-title{
+    margin-bottom: 50px;    
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.info-box{
+    display: flex;
+    align-items: center;
+    margin-bottom:10px;
+}
+
+.info-box > span{
+    padding-right:10px;
+}
+.info-box > a{
+    padding-right: 10px;
+}
+
+.sns-go {text-align:right;}
+.sns-go li {display:inline-block; margin: 0 5px; }
+.sns-go li img {border-radius:50%;}	
+
+.comment{
+    margin:0px 50px;
+}
+.comment-head > span{
+    padding-right:10px;
+    color:gray;
+}
+.comment-head{
+    margin-top:10px;
+}
+
+.comment-star{
+    margin-top:10px;
+}
+.star{
+  display:inline-block;
+  width: 30px;height: 60px;
+  cursor: pointer;
+}
+.star_left{
+  background: url(http://gahyun.wooga.kr/main/img/testImg/star.png) no-repeat 0 0; 
+  background-size: 60px; 
+  margin-right: -3px;
+}
+.star_right{
+  background: url(http://gahyun.wooga.kr/main/img/testImg/star.png) no-repeat -30px 0; 
+  background-size: 60px; 
+  margin-left: -3px;
+}
+.star.on{
+  background-image: url(http://gahyun.wooga.kr/main/img/testImg/star_on.png);
+}
+.comment-form{
+    margin-top:10px;
+}
+.comment-form-body{
+    width: 60%;
+}
+.comment-box{
+    margin-top:20px;
+    width: 60%;
+}
+.comment-user{
+    justify-content: space-between;
+}
+.comment-user > span{
+    padding-right: 10px;
+}
+.comment-content{
+    margin-top:10px;
+    border:1px black solid;
+    border-radius: 0.5em;
+    padding :10px;
+}
