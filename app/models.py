@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
-
 class Post(models.Model):
     name = models.CharField(max_length=50)
     pNumber = models.CharField(max_length=50)
@@ -17,9 +16,12 @@ class Post(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=50)
-    likes = models.CharField(max_length=50)
-    category =  models.CharField(max_length=50)
-
+    price = models.CharField(max_length=200)
+    photo = models.CharField(max_length=200)
+    link = models.CharField(max_length=200)
+    category = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name
 
 class Comment(models.Model):
     post = models.ForeignKey(
