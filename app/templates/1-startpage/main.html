@@ -9,12 +9,22 @@
     <title>I'll VEGAN</title>
 </head>
 <body>
-    <div class="mainbox">
-        <div class="nav-box">
-            <h1>Wellcome to I'll VEGAN</h1>
-            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquamerat volutpat. Ut wisi enim ad minim veniam, quis nostrud exercitation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate</p>
-            <a href="{% url 'home' %}">Go to Main</a>
+    <div class="header-container">
+        <div class="fullscreen-video-wrap">
+            <video src="{% static 'strawberry.mp4' %}" width="100%" height="100%" controls=1 autoplay muted loop="ture" allowfullscreen></video>
         </div>
+        
+        <div class="mainbox">
+            <div class="nav-box">
+                <h1>Welcome to I'll VEGAN</h1>
+                <p>Vivamus eu dictum ligula. Donec est orci, interdum sed lobortis at, suscipit sit amet metus. Mauris quam sapien, suscipit vel maximus eu, porta quis felis. Praesent ultrices risus placerat hendrerit consequat. Integer tincidunt dapibus dolor vel sollicitudin. Sed enim leo, ultricies eu justo id, dictum vehicula diam. Quisque aliquam porta est, ac tincidunt risus. Donec ut ligula risus. Nullam ultrices mollis lectus, quis pulvinar augue suscipit vitae. Fusce feugiat est sed sem tincidunt, id vulputate nisi pharetra.</p>
+                <br>
+                <a href="{% url 'home' %}">Go to Main</a>
+            </div>
+        </div>
+
+
+
     </div>
 </body>
 </html>
