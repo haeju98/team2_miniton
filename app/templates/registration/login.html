@@ -30,13 +30,16 @@
     <div class="login-box">
         <span id="bold">간편 로그인</span>
         <div class="login-kakao">
-            <a  href="{% provider_login_url 'kakao' %}">
-                Kakao Login
+            
+            <a href="{% provider_login_url 'kakao' %}">
+                
             </a>
         </div>
         <div class="login-google">
             <a href="{% provider_login_url 'google' %}">
-                Google Login
+                <img src="{% static 'registration/google.png' %}" style="
+                width: 100%;
+            ">
             </a>
         </div>
     </div>

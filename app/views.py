@@ -101,18 +101,35 @@ def Mapo(request):
 
 # 4-Store
 def Store(request):
-    posts = Post.objects.all()
-    return render(request, '4-Store/Store.html',{'posts':posts})
+    products = Product.objects.all()
+    return render(request, '4-Store/Store.html',{'products':products})
 
 
-def Food(request):
-    # posts=Post.objects.filter(category="Food")
-    return render(request, '4-Store/Food.html')#{'posts':posts}
+def Store_detail(request,product_pk):
+    product = Product.objects.get(pk=product_pk)
+    return render(request, '4-Store/Store_detail.html',{'product':product})
 
 
-def Cosmetics(request):
-    # posts=Post.objects.filter(category="Cosmetics")
-    return render(request, '4-Store/Cosmetics.html')#{'posts':posts}
+def schoolfood(request):
+    product=Product.objects.filter(category="1")
+    return render(request, '4-Store/schoolfood.html',{'product':product})#{'posts':posts}
+
+def sidedish(request):
+    product=Product.objects.filter(category="2")
+    return render(request, '4-Store/sidedish.html',{'product':product})#{'posts':posts}
+
+def sauce(request):
+    product=Product.objects.filter(category="3")
+    return render(request, '4-Store/sauce.html',{'product':product})#{'posts':posts}
+
+def snack(request): 
+    product=Product.objects.filter(category="4")
+    return render(request, '4-Store/snack.html',{'product':product})#{'posts':posts}
+
+def meet(request):
+    product=Product.objects.filter(category="5")
+    return render(request, '4-Store/meet.html',{'product':product})#{'posts':posts}
+
 
 
 # 5-Magazine
