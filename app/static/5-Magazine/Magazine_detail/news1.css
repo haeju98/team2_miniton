@@ -17,14 +17,14 @@
     text-decoration:underline #F8CD07;
 }
 
-h1{
-    font-size: 35px;
-    font-weight: lighter;
-}
 .mid-bar{
     text-align: center;
     border-bottom: 1px solid gray;
     margin-bottom: 10px;
+}
+h1{
+    font-size: 35px;
+    font-weight: lighter;
 }
 
 .footer{

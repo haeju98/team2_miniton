@@ -1,7 +1,12 @@
 @import url(base.css);
 
+body{
+    background-image: url('../picture/community_detail2.jpg');
+    background-size: cover;
+}
 .head-bar{
     width: 100%;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,32 +23,37 @@
 }
 
 .mid-bar{
+    width: 80%;
+    margin: 0 auto;
 }
 
 .mid-title{
     width: 80%;
     text-align: center;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid #607540;
     margin-bottom: 10px;
     font-size: 35px;
-    font-weight: lighter;
+    font-weight: 400;
     margin: 0 auto;
 }
 
-.main-box{
-    width: 80%;
-    margin: 10px auto;
+.content{
+    width: 50%;
+    margin: 20px auto;
+    padding-left: 100px;
 }
 
 .content-title{
-    font-size: 25px;
-    margin: 10px 20px;
+    font-size: 22px;
+    margin: 10px 10px;
     color:  #607540;
+    font-weight: bolder;
 }
 
 .comments{
-    width: 80%;
+    width: 50%;
     margin: 10px auto;
+    padding-left: 100px;
 }
 
 .comment{
@@ -64,17 +74,11 @@
 
 .comment_cont{
     height: 100%;
-    width: 50%;
-}
-
-.del_cont{
-    height: 100%;
-    width: 20%;
-    color: rgb(74, 74, 139);
+    width: 52%;
 }
 
 .new_comment{
-    width: 50%;
+    width: 60%;
     margin: 15px 0;
     display: flex;
 }
@@ -82,28 +86,55 @@
 .new_content{
     box-sizing: border-box;
     height: 25px;
-    width: 80%;
+    width: 500px;
     display: flex;
-    border: 1px solid #eee9e9; 
+    border: 1px solid #607540; 
     color: #666;
     padding: 3px 0 0 5px;
     font-size: 15px;
+    margin-right: 10px;
 }
 
 .footer{
-    width: 80%;
-    margin: 10px auto;
+    width: 45%;
+    margin: 40px auto;
+    text-align: center;
+    border: 5px solid rgb(235, 213, 172);
+    border-radius: 10px;
 }
 
 .button {
     box-sizing: border-box;
     height: 25px;
-    width : 82px;
-    background-color: white;
-    color: rgb(74, 74, 139);
-    font-size: 16px;
+    color: #607540;
+    font-size: 15px;
+    font-weight: bold;
     text-align: center;
     border: none;
     text-decoration: underline;
     letter-spacing: -1px;
+    margin-right: 25px;
+}
+
+.button:hover {
+	color: #8F9E68;
+}
+
+.comment_button{
+    width: 30%;
+    border: 3px solid #607540;
+    /* box-sizing: 10% 10% border-box; */
+    background-color: #F9E7D3;
+    color: #607540; 
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.comment_button:hover{
+	background-color:#D8C49F ;
 }
