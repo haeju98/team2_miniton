@@ -1,5 +1,10 @@
 @import url(base.css);
 
+
+img{
+    object-fit: contain;
+}
+
 .header{
     width: 100%;
     display: flex;
@@ -9,39 +14,64 @@
 }
 
 .title{
-    background-color: rgb(209, 243, 220);
+    font-family: 'Lobster', cursive;
+    font-size: 75px;
+    font-weight: 700;
+    color: #607540;
+    padding-bottom: 1%;
 }
 
 .middlebar{
-    width: 550px;
+    font-size: 22px;
+    width: 80%;
     display: flex;
     justify-content: space-around;
-    margin: 20px 0;
+    margin: 40px 0;
 }
 
 .Seoul{
-    background-color: rgb(209, 243, 220);
-    width: 150px;
+    border: 3px solid #607540;
+    width: 70px;
     height: 100%;
+    background-color: #F9E7D3;
+    font-weight: 700;
+    border-radius: 30px;
+    width: 30%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .Store_by_Region{
     width: 150px;
     height: 40%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
 }
 
 .nav-item{
-    border: 1px solid gray;
-    text-align: center;
-    margin-right: 15px;
-    width:30%
+    /* border: 1px solid gray; */
+    width:20%;
 }
 
 .middle {
-    width: 30px;
+    width: 90%;
     height: 40%;
-    color: blue;
+    font-weight: 800;
+    color: #607540;
     text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-right: 45px;
+
+    
+}
+.middle:hover{
+    color:#F8CD07;
+
 }
 
 .main-oneline{
@@ -59,3 +89,25 @@
     font-size: 15px;
     margin: 5px;
 }
+
+#product_name{
+    color: #2d3522;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 12 12 12 0px;
+}
+
+#product_price{
+    color: #607540;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 2px;
+}
+
+

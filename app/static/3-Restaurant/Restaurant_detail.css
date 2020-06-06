@@ -7,6 +7,37 @@ main{
 img {
     vertical-align: middle;
 }
+
+.info_review{
+    color: #607540;
+    font-weight: 900;
+
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+}
+
+.title{
+    font-family: 'Lobster', cursive;
+    margin-top: 100px;
+}
+
+.back-img{
+    width: 100%;
+    height: 45vh;
+    background-color: #F9E7D3;
+    background-image: url(../picture/restaurant.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 0em ;
+    
+  }
+
 .red {
     color: red !important;
 }
@@ -29,14 +60,25 @@ img {
     padding-left:10px;
 }
 .mainbar{
-    margin: 0px 100px;
+    /* margin: 0px 100px; */
 }
 
 .choose-bar2 {
-    margin: 20px 0;
-    border-bottom: 2px gray solid;
-    background-color: bisque;
+    margin: 0em;
+    /* border-bottom: 2px gray solid; */
+    /* background-color: bisque; */
   }
+
+.back-img{
+    width: 100%;
+    height: 45vh;
+    /* background-color: #F9E7D3; */
+    background-image: url(../picture/restaurant.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 1.2em ;
+}
+
 .flex{
     display: flex;
 }
@@ -145,3 +187,59 @@ img {
     border-radius: 0.5em;
     padding :10px;
 }
+
+/* 버튼... */
+/* .Store_by_Region{
+    background:#607540;
+    color:#F9E7D3;
+    border:none;
+    position:relative;
+    height:60px;
+    font-size:1.2em;
+    padding:0 1em;
+    cursor:pointer;
+    transition:800ms ease all;
+    outline:none;
+  }
+   */
+.Store_by_Region:hover{
+    background:#F9E7D3;
+    color:#607540;
+  }
+  
+.Store_by_Region:before,
+.Store_by_Regionx:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: #607540;
+    transition:400ms ease all;
+  }
+  
+.Store_by_Region:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  
+.Store_by_Region:hover:before,
+.Store_by_Region:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
+  #name{
+    color: #607540;
+    font-size: 16px;
+    font-weight: 800;
+  }
+  
+  .info-box{
+      margin-top: 50px;
+  }
+
+ 

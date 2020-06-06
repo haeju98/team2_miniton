@@ -3,15 +3,16 @@
 {% block css %}
     {% load static %}
     <link rel="stylesheet" href="{% static '4-Store/Store.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
     <div class="header">
-        <div class="title">COSMETICS</div>
+        <div class="title" style="text-decoration:underline #F8CD07">Store</div>
     </div>
 
     <div class="middlebar">
-        <div class="Seoul">카테고리 선택하기</div>
+        <div class="Seoul">Snack</div>
         <div class="Store_by_Region">
             
             <a class="nav-item middle" href="{% url 'Store' %}">Total</a>
@@ -30,8 +31,8 @@
               <a href="{{product.link}}">
                 <img src="{{product.photo}}" width="100%" height="100px" alt="상품이미지" />
             </a>
-              <span>{{product.name}}</span>
-              <span>{{product.price}}</span>
+              <span id="product_name">{{product.name}}</span>
+              <span id="product_price">{{product.price}}</span>
           </div>
           {% endfor %}
         </div>
