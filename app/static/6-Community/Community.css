@@ -65,6 +65,10 @@
     text-align: center;
 }
 
+.commu-join:hover {
+	background-color:#D8C49F ;
+}
+
 .footer{
     width: 45%;
     margin: 10px auto;
@@ -85,4 +89,8 @@
     letter-spacing: -1px;
     margin: 10px auto;
     margin-right: 25px;
+}
+
+.button:hover {
+	color: #8F9E68;
 }

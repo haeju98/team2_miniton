@@ -16,12 +16,12 @@
     </div>
 
     <div class="main-box">
-        <div class="content-title">content</div>
+        <div class="content-title">Content</div>
         {{post.content}}
     </div>
 
     <div class="comments">
-        <div class="content-title">comment</div>
+        <div class="content-title">Comment</div>
         {% for comment in post.Community_comment.all %}
             <div class="comment">
                 <div class="comment_author">{{comment.author}}</div>
@@ -36,7 +36,7 @@
         <form class="new_comment" method="POST">
             {% csrf_token %}
             <input class="new_content" type="text" name="content" placeholder="댓글을 입력해주세요">
-            <button class="button" type="submit">댓글쓰기</button>
+            <button class="comment_button" type="submit">댓글쓰기</button>
         </form>
         {% endif %}
     </div>
