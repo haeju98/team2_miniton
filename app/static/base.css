@@ -44,7 +44,7 @@ body{
 .base{
     display: flex;
     justify-content: space-between;
-    background-color: #8F9E68
+    background-color: #8F9E68;
 }
 
 .base .menu-icon {

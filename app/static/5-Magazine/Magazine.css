@@ -9,10 +9,12 @@
 }
 
 .head-title{
-    font-size: 20px;
-    border: 1px solid gray;
-    padding: 10px 30px;
-}
+    font-family: 'Lobster', cursive;
+    font-size: 75px;
+    font-weight: 700;
+    color: #607540;
+    padding-bottom: 1%;
+  }
 
 .line1{
     width: 100%;
@@ -22,7 +24,7 @@
 }
 
 .news{
-    border: 1px solid gray;
+    border: 1px solid #8F9E68;
     text-align: center;
     margin: 0 15px;
     width: 180px;

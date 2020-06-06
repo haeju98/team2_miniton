@@ -3,11 +3,12 @@
 {% block css %}
     {% load static %}
     <link rel="stylesheet" href="{% static '6-Community/Community.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
     <div class="head-bar">
-        <div class="title">Community</div>
+        <div class="title" style="text-decoration:underline #F8CD07">Community</div>
     </div>
 
     <div class="mainbox">
@@ -16,11 +17,9 @@
                 <div class="nav-item community-name">
                     {{post.title}}
                 </div>
-                <div class="nav-item join">
-                    <a href="{% url 'Community_detail' post.pk %}">
-                        join
-                    </a>
-                </div> 
+                <a class="nav-item commu-join" href="{% url 'Community_detail' post.pk %}">
+                    join
+                </a>
             </div>
         {% endfor %}
     </div>
