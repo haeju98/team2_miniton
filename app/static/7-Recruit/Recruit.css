@@ -6,6 +6,7 @@
     background-image:url('../picture/together.jpg');
     background-size: 100%;
     background-repeat: no-repeat;
+    
 
 }
 
@@ -39,8 +40,11 @@ h1{
 }
 
 .box{
+    background-color: rgba(255,255,255,0.5);
+    padding: 0 20px;
     width: 70%;
     height: 400px; 
+    
     font-weight: 400;
     display: flex;
     justify-content: center;
@@ -49,7 +53,7 @@ h1{
 }
 
 p{
-    font-size: 15px;
+    font-size: 20px;
     color: black;
 
 } 
