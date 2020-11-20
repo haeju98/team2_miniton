@@ -2,8 +2,9 @@
 
 > 비건을 위한 통합 웹 서비스 플랫폼
 
-<p align="center"><img src="https://user-images.githubusercontent.com/60457112/99774755-92319380-2b51-11eb-8aee-8a0d3e51a56d.png" width="500px"/></p>
-<p align="center"><img src="https://user-images.githubusercontent.com/60457112/99774767-952c8400-2b51-11eb-8e26-00e40f89f6e7.png" width="500px"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/60457112/99776737-a1661080-2b54-11eb-827e-1062f68f6d75.gif" width="500px"/></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/60457112/99776946-f30e9b00-2b54-11eb-8d37-a835562bca88.png" width="500px"/></p>
+
 
 ### [📷 화면기획서](https://docs.google.com/document/d/1mkqI7aCQx13PNN2kWhbGz3nv6JC-981JZwqimzR3byE/edit)
 ### [📋 팀 회의록](https://docs.google.com/document/d/1GNcKvoggR6rB3anN0DjmuASfJxnLRIMeCaIC2mQmEzk/edit)
@@ -30,12 +31,15 @@
 
 ## Installation
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the package manager [pipenv shell](https://pipenv-fork.readthedocs.io/en/latest/install.html) to install pipenv
 
 ```bash
-pip install foobar
+git clone https://github.com/dooking/team2_miniton.git
+cd team2_miniton
+pipenv shell
+pipenv install
+python manage.py runserver
 ```
-
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
